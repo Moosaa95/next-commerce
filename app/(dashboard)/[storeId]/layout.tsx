@@ -14,12 +14,18 @@ export default async function DashboardLayout({
         redirect("/sign-in")
     }
 
+    console.log(params, 'para');
+    
+
     const store = await prisma.store.findFirst({
         where: {
             id: params.storeId,
             userId
         }
     })
+
+    console.log('store', store);
+    
 
     if (!store){
         redirect('/')
