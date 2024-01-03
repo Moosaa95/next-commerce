@@ -3,9 +3,20 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
+  relationMode = "prisma"
+}
+
+
+model Store {
+  id String @id @default(uuid())
+  name String
+  userId String
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
 }
