@@ -35,3 +35,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+migrations*
+dev.db 
+dev.db*
+.gitignore
